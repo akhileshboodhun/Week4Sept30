@@ -1,8 +1,9 @@
 var myData = "";
 
-function getData() {
+async function getData() {
+    showLoading();
     const API_ENDPOINT = "https://pomber.github.io/covid19/timeseries.json";
-    fetch(API_ENDPOINT)
+    await fetch(API_ENDPOINT)
         .then((response) => response.json())
         .then((data) => {
             processData(data);
@@ -32,4 +33,26 @@ function funct1(data) {
     document.getElementById("recovered").innerHTML += '<p>' + myData["recovered"] + '</p>';
 }
 
-getData();
+$ = (query) => document.querySelector(query);
+
+function showLoading() {
+    document.getElementsByClassName("loading")[0].style.display = "block";
+    document.getElementsByClassName("covid")[0].style.display = "none";
+}
+
+function hideLoading() {
+    document.getElementsByClassName("loading")[0].style.display = "none";
+    document.getElementsByClassName("covid")[0].style.display = "block";
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function ready() {
+
+    await getData();
+    await sleep(2000);
+    hideLoading();
+}
+
+ready();

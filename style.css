@@ -4,6 +4,10 @@
     border: 0;
 } */
 
+.loading {
+    display: none;
+}
+
 body {
     color: white;
     font-family: Helvetica, sans-serif;
@@ -40,9 +44,13 @@ body {
 .data {
     display: flex;
     justify-content: space-between;
-    padding: 10px 100px;
+    margin: 100px;
     text-align: center;
     animation: anim 1s ease;
+}
+
+.data-box p:nth-child(1) {
+    font-size: 30px;
 }
 
 .data-box p:nth-child(2) {
