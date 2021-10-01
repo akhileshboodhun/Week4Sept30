@@ -27,7 +27,8 @@ function handleError(err) {
 function funct1(data) {
 
     myData = data["Mauritius"].slice(-1)[0];
-    console.log(myData);
+    console.log(myData["date"]);
+    document.getElementsByClassName("title")[0].innerHTML += '<p>' + myData["date"] + '</p>';
     document.getElementById("confirmed").innerHTML += '<p>' + myData["confirmed"] + '</p>';
     document.getElementById("deaths").innerHTML += '<p>' + myData["deaths"] + '</p>';
     document.getElementById("recovered").innerHTML += '<p>' + myData["recovered"] + '</p>';

@@ -59,3 +59,17 @@ body {
     padding: 50px;
     border-radius: 20px;
 }
+
+.title {
+    display: grid;
+    place-items: initial;
+}
+
+.title p {
+    margin-bottom: 0;
+}
+
+.title p:nth-child(2) {
+    font-size: 20px;
+    color: rgb(90, 90, 90);
+}
